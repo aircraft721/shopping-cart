@@ -1,10 +1,16 @@
 @extends('layouts.master')
 
-@section('title','Laravel')
+@section('title','Laravel Shopping Cart')
 
 @section('content')
 @foreach($products->chunk(3) as $productChunk)
-
+<div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+        <div id="charge-message" class="alert alert-success">
+            {{ Session::get('success') }}
+        </div>
+    </div>
+</div>
     <div class="row">
         @foreach($productChunk as $product)
             <div class="col-sm-6 col-md-4">
